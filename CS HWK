@@ -1,0 +1,34 @@
+print("Hi there, welcome to Pokemon!")
+import time
+import random
+time.sleep(1)
+name = input("What is your name? ")
+print("Hi Master " + name)
+choice  = input("Pick a starter Pokemon:\n1 - Bulbasaur\n2 - Squirtle\n3 - Charmander\n")
+if int(choice) == 1:
+    print("You chose Bulbasaur\nGreat ok!")
+
+elif int(choice) == 2:
+    print("You chose Squirtle\nGreat ok!")
+
+elif int(choice) == 3:
+    print("You chose Charmander\nGreat ok!")
+else:
+    print("Sorry that didn't work, please try again.")
+    time.sleep(1.5)
+    exit()
+print("Now let's have a look at your attributes")
+time.sleep(2)
+
+pokemon_health = str(random.randint(1,10))
+print("The health of your pokemon is " + pokemon_health)
+time.sleep(2)
+
+pokemon_defence = str(random.randint(1,10))
+print("The defence of your pokemon is " + pokemon_defence)
+time.sleep(2)
+
+pokemon_attack = str(random.randint(1,10))
+print("The attack of your pokemon is " + pokemon_attack)
+time.sleep(2)
+print("Now you're ready for battle!")
