@@ -1,0 +1,81 @@
+import time
+import random
+
+print("Hi there, welcome to Pokemon!")
+time.sleep(1)
+name = input("What is your name? ")
+print("Hi Master " + name)
+choice  = input("Pick a starter Pokemon:\n1 - Bulbasaur\n2 - Squirtle\n3 - Charmander\n")
+if int(choice) == 1:
+    print("You chose Bulbasaur\nGreat ok!")
+
+elif int(choice) == 2:
+    print("You chose Squirtle\nGreat ok!")
+
+elif int(choice) == 3:
+    print("You chose Charmander\nGreat ok!")
+else:
+    print("Sorry that didn't work, please try again.")
+    time.sleep(1.5)
+    exit()
+print("Now let's have a look at your attributes")
+time.sleep(2)
+
+player_pokemon_health = str(random.randint(1,10))
+print("The health of your pokemon is " + player_pokemon_health)
+time.sleep(2)
+
+player_pokemon_defence = str(random.randint(1,10))
+print("The defence of your pokemon is " + player_pokemon_defence)
+time.sleep(2)
+
+player_pokemon_attack = str(random.randint(1,10))
+print("The attack of your pokemon is " + player_pokemon_attack)
+time.sleep(4)
+print("Great now you know you're attributes, let's look at your opponent!")
+time.sleep(2)
+if int(choice) == 1:
+    print("You are going up against Charmander")
+elif int(choice) == 2:
+    print("You are going up against Bulbasaur")
+elif int(choice) == 3:
+    print("You are going up against Squirtle")
+else:
+    print("Sorry that didn't work, please try again.")
+    time.sleep(1.5)
+    exit()
+print("Let's have a look at their attributes")
+time.sleep(4)
+cpu_pokemon_health = str(random.randint(1,10))
+print("The health of your opponent is " + cpu_pokemon_health)
+time.sleep(2)
+
+cpu_pokemon_defence = str(random.randint(1,10))
+print("The defence of your opponent is " + cpu_pokemon_defence)
+time.sleep(2)
+
+cpu_pokemon_attack = str(random.randint(1,10))
+print("The attack of your opponent is " + cpu_pokemon_attack)
+def battle():
+    print("Now you're ready for battle!")
+
+if int(choice) == 1:
+   print("Bulbasaur vs Charmander")
+elif int(choice) == 2:
+   print("Squirtle vs Bulbasaur")
+elif int(choice) == 3:
+   print("Charmander vs Squirtle")
+print("It's your turn to attack, pick an attack")
+time.sleep(4)
+if int(choice) == 1:
+    player_attack_bulb = input("1 - Vine Whip\n2 - Razor Leaf\n3 - Poison Powder\n")
+if int(player_attack_bulb) == 1:
+    print("You chose Vine Whip!")
+elif int(player_attack_bulb) == 2:
+    print("You chose Razor Leaf")
+elif int(player_attack_bulb) == 3:
+    print("You chose Poison Powder")
+else:
+    print("Sorry that didn't work, please try again.")
+    time.sleep(1.5)
+    battle()
