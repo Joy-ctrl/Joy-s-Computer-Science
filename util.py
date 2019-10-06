@@ -8,9 +8,18 @@ import random
 class pokemon:
     def __init__(self, name):
         self.name=name
-        self.health=genrandom(1,10)
-        self.attack=genrandom(1,10)
-        self.defence=genrandom(1,10)
+        self.health=genrandom(50,100)
+        self.attack=genrandom(11,20)
+        self.defence=genrandom(5,10)
+    
+    def change_health(self, num):
+        self.health = self.heatlh + int(num)
+
+    def change_attack(self, num):
+        self.attack = self.attack + int(num)
+
+    def change_defence(self, num):
+        self.defence = self.defence + int(num)
 
 # Takes number min, max and generates a random
 # number in that range
@@ -19,7 +28,7 @@ def genrandom(min, max):
    return rndint
 
 # Ensures opposing pokemon
-# is different
+# are different
 def choose_opp(name):
    if name == "Charmander":
        opp_name = "Squirtle"
@@ -30,5 +39,4 @@ def choose_opp(name):
    else:
        opp_name = "Unknown"
    return opp_name
-
 
