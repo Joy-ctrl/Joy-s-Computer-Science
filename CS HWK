@@ -40,26 +40,26 @@ def Squirtle():
     time.sleep(1)
     print("You're walking through a forest... when a wild Bulbasaur appears!")
     time.sleep(1)
-    if Bspeed > Sspeed:
-    print("The Bulbasaur has a higher speed, so they attack first!")
-    print("Bulbasaur uses Vine Whip, it's very effective")
-    else:
-        print("Sorry that didn't work properly, please try again")
-        
-    time.sleep(1)
     if Sspeed > Bspeed:
         print("You have a higher speed, so you attack first!")
+        attack = input("Pick an attack:\n1 -Tackle\n2 -Water Gun\n3 - Bubble Beam\n")
+        if int(attack) == 1:
+            print("You tackled the wild Bulbasaur")
+        elif int(attack) == 2:
+            print("You used Water Gun on the wild Bulbasaur")
+        elif int(attack) == 3:
+            print("You blinded the wild Bulbasaur with Bubble Beam")
+        else:
+            print("Sorry that didn't work please try again")
+            exit()
     else:
-        ("You both have the same speed, it starts evenly")
-    attack = input("Pick an attack:\n1 - Tackle\n2 - Water Gun\n3 - Bubble Beam\n")
-    if int(attack) == 1:
-        print("You tackled the wild Bulbasaur")
-    elif int(attack) == 2:
-        print("You used a Water Gun on the wild Bulbasaur")
-    elif int(attack) == 3:
-        print("You blinded the wild Bulbasaur with Bubble Beam")
+        print("Sorry that didn't work, please try again")
+        exit()
+    if Bspeed > Sspeed:
+        print("Bulbasaur has a higher speed, so they attack first!")
+        print("Bulbasaur uses Vine Whip")
     else:
-        print("Sorry that didn't work please try again")
+        print("Sorry that didn't work, please try again")
         exit()
 
 
@@ -100,25 +100,26 @@ def Charmander():
     print("The speed of Squirtle is " + str(Sspeed))
     time.sleep(1)
     print("You're on a boat at sea... when a wild Squirtle appears!")
-    if Sspeed > Cspeed:
-        print("The Squirtle has a higher speed, so they attack first!")
-        print("Squirtle shoots you with a Water Gun, it's very effective")
-    else:
-        print("Sorry that didn't work properly, please try again")
-        exit()
     if Cspeed > Sspeed:
         print("You have a higher speed, so you attack first!")
+        attack = input("Pick an attack:\n1 -Scratch\n2 -Fire Spin\n3 - Smokescreen\n")
+        if int(attack) == 1:
+            print("You whipped the wild Squirtle")
+        elif int(attack) == 2:
+            print("You performed Fire Spin on the wild Squirtle")
+        elif int(attack) == 3:
+            print("You blinded the wild Squirtle with Smokescreen")
+        else:
+            print("Sorry that didn't work please try again")
+            exit()
     else:
-        ("You both have the same speed, it starts evenly")
-    attack = input("Pick an attack:\n1 - Scratch\n2 - Fire Spin\n3 - Smokescreen\n")
-    if int(attack) == 1:
-        print("You scratched the wild Squirtle")
-    elif int(attack) == 2:
-        print("You performed a Fire Spin on the wild Squirtle")
-    elif int(attack) == 3:
-        print("You blinded the wild Squirtle with Smokescreen")
+        print("Sorry that didn't work, please try again")
+        exit()
+    if Sspeed > Cspeed:
+        print("Charmander has a higher speed, so they attack first!")
+        print("Charmander uses Fire Spin")
     else:
-        print("Sorry that didn't work please try again")
+        print("Sorry that didn't work, please try again")
         exit()
 
 
@@ -161,27 +162,27 @@ def Bulbasaur():
     time.sleep(1)
     print("You're climbing a volcano... when a wild Charmander appears!")
     time.sleep(1)
-    if Cspeed > Bspeed:
-        print("The Charmander has a higher speed, so they attack first!")
-        print("Charmander blinds you with a Smokescreen, it's very effective")
-    else:
-        print("Sorry that didn't work properly, please try again")
-        exit()
     if Bspeed > Cspeed:
         print("You have a higher speed, so you attack first!")
+        attack = input("Pick an attack:\n1 - Vine Whip\n2 - Razor Leaf\n3 - Poison Powder\n")
+        if int(attack) == 1:
+            print("You whipped the wild Charmander")
+        elif int(attack) == 2:
+            print("You performed Razor Leaf on the wild Charmander")
+        elif int(attack) == 3:
+                print("You blinded the wild Charmander with Smokescreen")
+        else:
+            print("Sorry that didn't work please try again")
+            exit()
     else:
-        ("You both have the same speed, it starts evenly")
-    attack = input("Pick an attack:\n1 - Vine Whip\n2 - Razor Leaf\n3 - Poison Powder\n")
-    if int(attack) == 1:
-        print("You whipped the wild Charmander")
-    elif int(attack) == 2:
-        print("You performed Razor Leaf on the wild Charmander")
-    elif int(attack) == 3:
-        print("You blinded the wild Charmander with Smokescreen")
-    else:
-        print("Sorry that didn't work please try again")
+        print("Sorry that didn't work, please try again")
         exit()
-
+    if Cspeed > Bspeed:
+        print("Charmander has a higher speed, so they attack first!")
+        print("Charmander uses Fire Spin")
+    else:
+        print("Sorry that didn't work, please try again")
+        exit()
 print("Hi there, welcome to Pokemon!")
 time.sleep(1)
 name = input("What is your name? ") #This is a variable that is going to hold user input.
