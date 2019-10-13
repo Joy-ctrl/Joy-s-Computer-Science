@@ -174,18 +174,27 @@ def Bulbasaur():
         else:
             print("Sorry that didn't work please try again")
             exit()
-    else:
-        print("Sorry that didn't work, please try again")
-        exit()
+# will cause exit before Cspeed > Bspeed
+#    else:
+#        print("Sorry that didn't work, please try again")
+#        exit()
     if Cspeed > Bspeed:
         print("Charmander has a higher speed, so they attack first!")
         print("Charmander uses Fire Spin")
-    else:
-        print("Sorry that didn't work, please try again")
+    # Theres only one other scenario here Cspeed = Bspeed
+    # you could  use  "else"  as its the  onlty other logical  condition
+    # or in  my opinion  its better to have another if to make it clearer
+    # the intention of the program
+    
+    #else:
+    if Cspeed == Bspeed:
+        print("Both  Pokemon  have identical  speed!")
         exit()
+    # Add something here to decide  what to do in this scenario
+
 print("Hi there, welcome to Pokemon!")
 time.sleep(1)
-name = input("What is your name? ") #This is a variable that is going to hold user input.
+name = raw_input("What is your name? ") #This is a variable that is going to hold user input.
 print("Hi Master " + name) #This is a print statement that includes a variable in it
 choice  = input("Pick a starter Pokemon:\n1 - Bulbasaur\n2 - Squirtle\n3 - Charmander\n")
 if int(choice) == 1: 
@@ -197,7 +206,24 @@ elif int(choice) == 2:
 elif int(choice) == 3:
     Charmander()
 else:  #This is the final part of the conditional set. It is almost always necessary to use ELSE.
-        #Otherwise your program might crash
-    print("Sorry that didn't work, please try again.")
-    time.sleep(1.5)
-    exit()
+       #Otherwise your program might crash
+   print("Thats not a valid option, please try again.")
+   time.sleep(1.5)
+   exit()
+
+"""
+*** Notes for Suli ***
+
+Anything within a block of triple " is a comment by the way.
+
+I could be wrong but I dont necessarily agree with the comment above about else
+if you have your last "elif" statement then you can just drop out of that, you 
+don't always need an "else". You only need an else if you want to say "if nothing 
+else then do this"
+
+I put some comments above, basically where your speed comparisons were, when the
+CPU pokemon's speed was greater you'd just drop out at the else statement, as I
+said  above, the final "else" statement is not always necessary.  You'll need to 
+edit your other functions in the same way.
+"""
+
