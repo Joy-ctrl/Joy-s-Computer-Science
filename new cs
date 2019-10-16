@@ -1,0 +1,106 @@
+import time
+import random
+
+
+
+def Squirtle():
+    print("You chose Squirtle\nGreat ok!")
+    time.sleep(1)  # This delays the program for 1 second after the print statement above has gone through.
+    print("Now let's have a look at your attributes")
+    time.sleep(1)
+    Shealth = random.randint(49, 58)  # This gives us a random number, in this case it's from 49-58.
+    print("The health of your pokemon is " + str(Shealth))
+    time.sleep(1)
+    Sdefence = random.randint(20, 39)
+    print("The defence of your pokemon is " + str(Sdefence))
+    time.sleep(1)
+    Sattack = random.randint(54, 62)
+    print("The attack of your pokemon is " + str(Sattack))
+    time.sleep(1)
+    Sspeed = random.randint(31, 56)
+    print("The speed of your pokemon is " + str(Sspeed))
+    time.sleep(4)
+    print("Now you know your attributes, let's look at your opponent")
+    time.sleep(1)
+    print("You are fighting Bulbasaur")
+    time.sleep(1)
+    print("Let's look at the Bulbasaur's attributes")
+    time.sleep(1)
+    Bhealth = random.randint(51, 60)
+    print("The health of Bulbasaur is " + str(Bhealth))
+    time.sleep(1)
+    Bdefence = random.randint(20, 40)
+    print("The defence of Bulbasaur is " + str(Bdefence))
+    time.sleep(1)
+    Battack = random.randint(57, 61)
+    print("The attack of Bulbasaur is " + str(Battack))
+    time.sleep(1)
+    Bspeed = random.randint(34, 56)
+    print("The speed of Bulbasaur is " + str(Bspeed))
+    time.sleep(1)
+    print("You're walking through a forest... when a wild Bulbasaur appears!")
+    time.sleep(1)
+    if Sspeed > Bspeed:
+                print("You have a higher speed, so you attack first!")
+    attack1 = input("Pick an attack:\n1 - Tackle\n2 - Water Gun\n3 - Bubble Beam\n ")
+    if int(attack1) == 1:  # We have to put int here (standing for integer) since we're
+            # trying to convert a integer into a string.
+        print("You tackled the wild Bulbasaur")
+        time.sleep(1)
+    elif int(attack1) == 2:
+        print("You performed Water Gun on the wild Bulbasaur")
+        time.sleep(1)
+    elif int(attack1) == 3:
+        print("You blinded the wild Bulbasaur with Bubble Beam")
+        time.sleep(1)
+    else:
+        print("Sorry that didn't work please try again")
+    exit()
+    Bhealth = Bhealth - Sattack + Bdefence
+    if Bspeed > Sspeed:
+        print("Bulbasaur has a higher speed, so they attack first!")
+        time.sleep(1)
+    print("Bulbasaur uses Vine Whip")
+    Shealth = Shealth - Battack + Sdefence
+    battle_turn = 1
+    while Shealth > 0 and Bhealth > 0:
+        if battle_turn == 1:
+            attack1 = input("Pick an attack:\n1 - Tackle\n2 - Water Gun\n3 - Bubble Beam\n ")
+        if int(attack1) == 1:
+            print("You tackled the wild Bulbasaur")
+            time.sleep(1)
+        elif int(attack1) == 2:
+            print("You performed Water Gun on the wild Bulbasaur")
+            time.sleep(1)
+        elif int(attack1) == 3:
+            print("You blinded the wild Bulbasaur with Bubble Beam")
+            time.sleep(1)
+        battle_turn = 2
+    print("Bulbasaur uses Vine Whip")
+    if Shealth > 0 and Bhealth <= 0:
+        print("The winner is Squirtle!")
+    elif Bhealth > 0 and Shealth <= 0:
+        print("The winner is Bulbasaur")
+    else:
+        print("It's a draw!")
+
+
+
+print("Hi there, welcome to Pokemon!")
+time.sleep(1)
+name = input("What is your name? ")
+print("Hi Master " +name)
+choice  = input("Pick a starter Pokemon:\n1 - Bulbasaur\n2 - Squirtle\n3 - Charmander\n") #This allows the user to pick
+# a move, the 'n' stands for new line.
+if int(choice) == 1:
+    Bulbasaur()  # When the choice is made a certain function will run, specific for the pokemon.
+
+elif int(choice) == 2:
+    Squirtle()
+
+elif int(choice) == 3:
+    Charmander()
+else:
+    print("Sorry that didn't work, please try again.")  # If neither 1,2 or 3 is inputted the program will close.
+    time.sleep(1.5)
+    exit()
