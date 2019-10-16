@@ -88,9 +88,9 @@ def Squirtle():
 
 print("Hi there, welcome to Pokemon!")
 time.sleep(1)
-name = input("What is your name? ")
-print("Hi Master " +name)
-choice  = input("Pick a starter Pokemon:\n1 - Bulbasaur\n2 - Squirtle\n3 - Charmander\n") #This allows the user to pick
+name = raw_input("What is your name? ")
+print("Hi Master " + str(name))
+choice  = raw_input("Pick a starter Pokemon:\n1 - Bulbasaur\n2 - Squirtle\n3 - Charmander\n") #This allows the user to pick
 # a move, the 'n' stands for new line.
 if int(choice) == 1:
     Bulbasaur()  # When the choice is made a certain function will run, specific for the pokemon.
