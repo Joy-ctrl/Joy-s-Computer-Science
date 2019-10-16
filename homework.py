@@ -40,27 +40,31 @@ def Squirtle():
     time.sleep(1)
     print("You're walking through a forest... when a wild Bulbasaur appears!")
     time.sleep(1)
-    if Sspeed > Bspeed:
+    battle_turn = 1
+    if battle_turn == 1:
         print("You have a higher speed, so you attack first!")
-        attack = input("Pick an attack:\n1 -Tackle\n2 -Water Gun\n3 - Bubble Beam\n")
-        if int(attack) == 1:
-            print("You tackled the wild Bulbasaur")
-        elif int(attack) == 2:
-            print("You used Water Gun on the wild Bulbasaur")
-        elif int(attack) == 3:
-            print("You blinded the wild Bulbasaur with Bubble Beam")
-        else:
-            print("Sorry that didn't work please try again")
-            exit()
+    attack1 = input("Pick an attack:\n1 - Tackle\n2 - Water Gun\n3 - Bubble Beam\n ")
+    if int(attack1) == 1: 
+        print("You tackled the wild Bulbasaur")
+        time.sleep(1)
+    elif int(attack1) == 2:
+        print("You performed Water Gun on the wild Bulbasaur")
+        time.sleep(1)
+    elif int(attack1) == 3:
+        print("You blinded the wild Bulbasaur with Bubble Beam")
+        Bhealth = Bhealth - Sattack + Bdefence
+        time.sleep(1)
     else:
-        print("Sorry that didn't work, please try again")
-        exit()
+        print("Sorry that didn't work please try again")
+    exit()
     if Bspeed > Sspeed:
         print("Bulbasaur has a higher speed, so they attack first!")
         print("Bulbasaur uses Vine Whip")
-    else:
-        print("Sorry that didn't work, please try again")
-        exit()
+    Shealth = Shealth - Battack + Sdefence
+    if Shealth > 0 and Bhealth <= 0:
+        print("The winner is Squirtle!")
+    if Bhealth > 0 and Shealth <= 0:
+        print("The winner is Bulbasaur")
 
 
 
